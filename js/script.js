@@ -11,10 +11,15 @@
 //THEN I can save my initials and my score
 
 var startButton = document.querySelector("#.start-button");
-var timerElement = document.querySelector(".timer-count");
-var submitButton = document.querySelector (".submit-button")
+var submitButton = document.querySelector (".submit-button");
 var saveButton = document.querySelector(".save-button");
-// What is the difference between get Elment and QuerySelector 
+var timerElement = document.querySelector(".timer");
+var questionContainer = document.querySelector(".question-container");
+var timeLeft = document.querySelector("time-left");
+
+
+
+// What is the difference between getElement and QuerySelector? WHy use one over the other? 
 
 
 // Const instead of var- look this up to confirm 
