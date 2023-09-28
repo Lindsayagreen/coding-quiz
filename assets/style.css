@@ -3,11 +3,11 @@ body {
     text-align: center;
 }
 
-/* .container {
+.container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-} */
+}
 
 button {
     padding: 10px 20px;
