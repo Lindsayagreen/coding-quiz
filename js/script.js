@@ -19,41 +19,37 @@ var timeLeft = document.querySelector(".time-left");
 // var submitButton = document.querySelector (".submit-button");
 var saveButton = document.querySelector(".save-button");
 var level = 0
-var questionText1 = document.getElementById ("question-text1");
-var questionText2 = document.getElementById ("question-text2");
+var questionText1 = document.getElementById("question-text1");
+var questionText2 = document.getElementById("question-text2");
 
 
-
-// What is the difference between getElement and QuerySelector? WHy use one over the other? 
-
-// Const instead of var- look this up to confirm 
 var questions = [
     {
         question: "What does HTML stand for?",
         answer: "HyperText Markup Language",
-        options: ["cats", "HyperText Markup Language", "dogs", "hamsters" ]
+        options: ["cats", "HyperText Markup Language", "dogs", "hamsters"]
     },
     {
         question: "What does CSS stand for?",
         answer: "Cascading Style Sheet",
-        options: ["cats", "Cascading Style Sheet", "dogs", "hamsters" ]
+        options: ["cats", "Cascading Style Sheet", "dogs", "hamsters"]
     },
 ];
 
 startButton.addEventListener("click", startQuiz);
 function startQuiz() {
-console.log ("button clicked")
-     // Start the timer
+    console.log("button clicked")
+    // Start the timer
     startTimer();
     // Display the first question (you can replace this with your question logic)
-    showQuestion(); 
+    showQuestion();
 }
 
 // function startTimer() {
-    var secondsLeft = 30;
+var secondsLeft = 30;
 
 function startTimer() {
-    timerInterval = setInterval(function()  {
+    timerInterval = setInterval(function () {
         secondsLeft--;
         if (secondsLeft <= 0) {
             clearInterval(timerInterval);
@@ -65,31 +61,44 @@ function startTimer() {
 
 function updateTimerDisplay() {
     timeLeft.textContent = secondsLeft;
-    console.log ("inside this display")
+    console.log("inside this display")
 }
 
-function showQuestion () {
-    questionText1.textContent = questions [level].question
-    questionText2.innerHTML = ""
-    for (var i=0; i<4; i++) {
-        var btn = document.createElement ("button")
-        btn.textContent = questions [level].options[i]
-        btn.onclick = checkAnswer
-        questionText2.append (btn)
+function showQuestion() {
+    questionText1.textContent = questions[level].question;
+    questionText2.innerHTML = "";
+    for (var i = 0; i < 4; i++) {
+        var btn = document.createElement("button")
+        btn.setAttribute("data-value", questions[level].options[i])
+        btn.textContent = questions[level].options[i]
+        btn.addEventListener("click", checkAnswer);
+        questionText2.appendChild(btn);
     }
 }
 
-function checkAnswer () {
-    console.log ("check answer")
-    // add if else statement 
 
-    level ++
-    showQuestion ()
+function checkAnswer() {
 
-
-
+    level++
+    showQuestion()
+    if (this.dataset.value === questions[level].Result) {
+        level++;
+        if (currentQuestion === questions.length) {
+          // endGame(); 
+        } else {
+          showQuestion(); // Show next question
+        }
+      } else {
+        time -= 9;
+      }
+    
+      if (time <= 0) {
+      //   endGame(); // Call endGame when time is up
+      }
 }
-// saveButton.addEventListener("click", saveScore);
+
+
+saveButton.addEventListener("click", saveScore);
 
 // Save the initials and score in some data structure or send to a server
 // Redirect to a high score page or display the high scores
