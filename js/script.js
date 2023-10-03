@@ -16,12 +16,12 @@ var questions = [
     {
         question: "What does HTML stand for?",
         answer: "HyperText Markup Language",
-        options: ["cats", "HyperText Markup Language", "dogs", "hamsters"]
+        options: ["HyperText Makeup Language", "HyperText Markup Language", "HyperText Markdown Language", "HyperTech Markdown Language"]
     },
     {
         question: "What does CSS stand for?",
         answer: "Cascading Style Sheet",
-        options: ["cats", "Cascading Style Sheet", "dogs", "hamsters"]
+        options: ["Cat Scan Sheets", "Cascading Style Sheet", "Cascading Sync Sheet", "Cascading Style Structure"]
     },
 ];
 
