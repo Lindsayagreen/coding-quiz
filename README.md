@@ -2,7 +2,7 @@
 
 # Description
 
-A very basic quiz that only show functionality. It has 2 questions. This is something that could definitely been expanded on. 
+A very basic quiz that only show functionality. It has 2 questions. This is something that could definitely been expanded on. It has two basic questions and a submit score page. 
 
 # Screenshot 
 
